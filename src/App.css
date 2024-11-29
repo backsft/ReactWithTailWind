@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.menu {
+  width: 80%;
+  height: 100vh;
+  position: fixed;
+  text-align: left;
+  left: -80%; /* Start off-screen to the left */
+  background-color: yellow;
+  list-style: none;
+  transition: 0.5s;
+}
+
+.menu ul li {
+  list-style: none;
+  padding: 10px 0px;
+}
+
+.mIcon {
+  position: absolute;
+  right: 10px;
+}
+
+.activeMenu {
+  left: 0%; /* Move into view */
+}

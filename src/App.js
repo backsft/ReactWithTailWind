@@ -9,7 +9,12 @@ function App() {
 
   let [count, setCount] = useState(1);
 
-  let [pshow, setPshow] = useState(true);
+  let [pshow, setPshow] = useState(false);
+
+  let [pstatus, setStatus] = useState(false);
+
+  
+  let [menuStatus, setMenuStatus] = useState(false);
 
   if (pshow) {
    
@@ -43,10 +48,43 @@ function App() {
   return (
 
     <div className='App'>
+      
+      <button className='mIcon' onClick={()=>setMenuStatus(!menuStatus)}>
+       
+       {menuStatus?
+       
+       <span>&times;</span>
+       :
+       <span>&#9776;</span>
+       
+       }
+       
+        
+        
+        </button>     
+
+      <div className={`menu ${menuStatus?'activeMenu':''}`}>
+        <ul>
+      <li>Home</li>
+      <li>ProductList</li>
+      <li>Orders</li>
+      <li>Settings</li>
+      <li>Contact Us</li>
+
+        </ul>
+
+
+      </div>
 
  <div>
  {template}
  </div>    
+
+    <input type={pstatus?'text':'password'} className='bg-[gray]'/>
+    
+    <button onClick={()=>setStatus(!pstatus)}>{pshow?'Hide':'Show'}</button>
+
+
 
       <Header />
       {count}
